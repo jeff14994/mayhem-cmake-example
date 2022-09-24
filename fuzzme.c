@@ -39,4 +39,4 @@ int LLVMFuzzerTestOneInput(char* data, size_t size) {
     //fclose(f);
 
     return 0;
-i}
+}
