@@ -1,0 +1,41 @@
+# Namespaced project name that the target belongs to
+project: jeff14994/hackathon
+
+# Target name (should be unique within the project)
+target: mayhem-cmake-example
+
+# Base image to run the binary in.
+image: ghcr.io/jeff14994/mayhem-cmake-example:latest 
+
+# List of commands used to test the target
+cmds:
+
+  # Command used to start the target, "@@" is the input file
+  # (when "@@" is omitted Mayhem defaults to stdin inputs)
+  - cmd: /fuzzme @@
+# The Docker image that our target lives in.
+#image: forallsecure/lighttpd:vulnerable
+
+# How long to run behavior analysis.
+duration: 90
+
+# Project and target within Mayhem
+#project: tutorial
+#target: lighttpd
+
+# Turn on Mayhem's advanced triage capabilities.
+#advanced_triage: true
+
+# The tasks to perform during a run.
+tasks:
+  - name: exploitability_factors
+  - name: regression_testing
+  - name: behavior_testing
+  - name: coverage_analysis
+
+# How Mayhem will execute lighttpd.
+#cmds:
+#  - cmd: /usr/local/sbin/lighttpd -D -f /usr/local/etc/lighttpd.conf
+#    network:
+#      url: tcp://localhost:80
+#      timeout: 2

@@ -17,6 +17,7 @@ int fuzzme(char *buf)
 
 //#define BUFSZ 256
 
+<<<<<<< HEAD
 int LLVMFuzzerTestOneInput(char* data, size_t size) {
     /*char buf[BUFSZ] = { 0 };
     FILE* f = NULL;
@@ -39,4 +40,33 @@ int LLVMFuzzerTestOneInput(char* data, size_t size) {
     //fclose(f);
 
     return 0;
+=======
+//#int main(int argc, char** argv)
+//#{
+//#    char buf[BUFSZ] = { 0 };
+//#    FILE* f = NULL;
+//#    size_t nr = 0;
+//#
+//#    if (2 > argc) {
+//#        fprintf(stderr, "usage: %s PAYLOAD\n", argv[0]);
+//#        return 1;
+//#    }
+//#
+//#    f = fopen(argv[1], "rb");
+//#    assert(f);
+//#
+//#    nr = fread(buf, sizeof(buf[0]), BUFSZ, f);
+//#    assert(nr > 0);
+//#    buf[BUFSZ-1] = '\0';
+//#
+//#    fuzzme(buf);
+//#
+//#    fclose(f);
+//#
+//#    return 0;
+//#}
+int LLVMFuzzerTestOneInput(char* data, size_t size){
+  fuzzme(data);
+  return 0;
+>>>>>>> 7fe6100fd8f48dd084ca8b81b9ef702f89dc9776
 }
