@@ -1,1 +1,0 @@
-/opt/homebrew/Cellar/llvm/15.0.0/bin/clang  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -fsanitize=fuzzer CMakeFiles/fuzzme.dir/fuzzme.c.o -o fuzzme 
